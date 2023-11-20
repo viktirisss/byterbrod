@@ -7,7 +7,7 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Отель Тамбов</title>
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/Feedback.css">
 </head>
 
 <body>
@@ -30,36 +30,35 @@
                     <a class="navbar-link" href="#">Отзывы</a>
                 </li>
                 <li class="navbar-item">
-                    <a class="navbar-link" href="./Feedback.html">Обратная связь</a>
+                    <a class="navbar-link" href="#">Обратная связь</a>
                 </li>
             </ul>
         </header>
-        <main class="content">
+        <main>
             <div class="information">
-                <div class="wallpaper_information">
-                    <h1>Лучшие условия бронирования онлайн</h1>
-                    <h1>Скидка 15%</h1>
-                </div>
-            </div>
-            <div class="reservation">
-                <div class="reservation_information">
-                    <h2>Бронирование номеров</h2>
-                    <p>Гарантированное заселение</p>
-                </div>
-                <div class="reservation_time">
-                    <div class="check-up">
-                        <span>Дата заезда</span>
-                        <input type="date" inputmode="none" value="23.11.2023"> 
+                <div class="feedback">
+                    <div class="infrm">
+                        <h1>Хотите заказать номер по телефону?</h1>
+                        <h2>Оставьте завяку и мы свяжемся с вами</h2>
                     </div>
-                    <div class="departure">
-                        <span>Дата выезда</span>
-                        <input type="date" inputmode="none" value="23.11.2023">
+                    <div class="questuions">
+                        <span>Как к вам обращаться</span>
+                        <input type="text">
                     </div>
-                    <div class="company">
-                        <span>Гости</span> 
-                        <input type="text" class="question" unselectable="on" inputmode="numeric" placeholder="2">
+                    <div class="questuions">
+                        <span>Ваш номер телефона</span>
+                        <input type="tel" value="+7 ">
                     </div>
-                    <button class="find_number">Найти номер</button>
+                    <menu class="button">
+                        <buttin id="button_open">Отправить</buttin>
+                    </menu>
+                    <dialog id="modalID" class="modal">
+                        <div class="window_modal">
+                            <h1>Спасибо что выбрали нас!</h1>
+                            <h2>Дожидайтесь звонка</h2>
+                            <button id="button_close">Закрыть</button>
+                        </div>
+                    </dialog>
                 </div>
             </div>
         </main>
@@ -85,6 +84,23 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        (function () {
+            const open = document.getElementById("button_open");
+            const close = document.getElementById("button_close");
+            const modalID = document.getElementById("modalID");
+
+            open.addEventListener("click", () => {
+                modalID.showModal();
+            });
+
+            close.addEventListener("click", () => {
+                modalID.close();
+            });
+        })();
+    </script>
+
 </body>
 
 </html>
